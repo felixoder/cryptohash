@@ -10,7 +10,7 @@
   "exports": {
     ".": {
       "import": "./index.js",
-      "require": "./index.cjs"
+      "require": "./index.js"
     }
   },
   "keywords": [
