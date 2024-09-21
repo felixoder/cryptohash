@@ -2,12 +2,16 @@
   "name": "felixhash",
   "version": "1.0.3",
   "description": "A custom SHA256 cryptographic hashing class implementation in TypeScript.",
-  "main": "index.js",
+  "main": "index.cjs",
   "types": "index.d.ts",
   "scripts": {
-    "build": "tsc -b",
-    "start": "node index.js",
-    "dev": "npm run build && npm run start"
+    "build": "tsc -b"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
   },
   "keywords": [
     "SHA256",
