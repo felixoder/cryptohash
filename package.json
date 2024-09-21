@@ -1,6 +1,6 @@
 {
   "name": "felixhash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom SHA256 cryptographic hashing class implementation in TypeScript.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -9,7 +9,14 @@
     "start": "node index.js",
     "dev": "npm run build && npm run start"
   },
-  "keywords": ["SHA256", "crypto", "hashing", "typescript", "web3", "blockchain"],
+  "keywords": [
+    "SHA256",
+    "crypto",
+    "hashing",
+    "typescript",
+    "web3",
+    "blockchain"
+  ],
   "author": "Debayan",
   "license": "ISC",
   "dependencies": {
