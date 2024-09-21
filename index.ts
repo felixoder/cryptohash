@@ -31,7 +31,6 @@ class SHA256 {
     const view = new DataView(paddedMessage.buffer);
     view.setBigUint64(paddedLength - 8, BigInt(bitLength), false);
     
-    // console.log("Padded message:", Array.from(paddedMessage).map(b => b.toString(16).padStart(2, '0')).join(''));
     return paddedMessage;
   }
 
@@ -40,10 +39,8 @@ class SHA256 {
   }
 
   private static compressBlock(block: Uint32Array, hash: Uint32Array): void {
-    // console.log("Initial hash state:", Array.from(hash).map(h => h.toString(16).padStart(8, '0')).join(' '));
     const w = new Uint32Array(64);
     for (let i = 0; i < 16; i++) {
-      // Convert little-endian to big-endian
       w[i] = (block[i] & 0xff) << 24 | (block[i] & 0xff00) << 8 | 
              (block[i] & 0xff0000) >> 8 | (block[i] & 0xff000000) >> 24;
     }
@@ -82,31 +79,24 @@ class SHA256 {
     hash[5] = (hash[5] + f) | 0;
     hash[6] = (hash[6] + g) | 0;
     hash[7] = (hash[7] + h) | 0;
-    // console.log("Final hash state:", Array.from(hash).map(h => h.toString(16).padStart(8, '0')).join(' '));
   }
-
 
   private static toBytes(input: string): Uint8Array {
     const bytes = new TextEncoder().encode(input);
-    // console.log("Input as bytes:", Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join(''));
     return bytes;
   }
+
   private static toHex(hash: Uint32Array): string {
-    const result = Array.from(hash).map(x => x.toString(16).padStart(8, '0')).join('');
-    // console.log("Final hash:", result);
-    return result;
+    return Array.from(hash).map(x => x.toString(16).padStart(8, '0')).join('');
   }
 
   public static hash(input: string): string {
-    // console.log("Input string:", input);
     const message = SHA256.toBytes(input);
     const paddedMessage = SHA256.padMessage(message);
     const hash = new Uint32Array(SHA256.H);
 
     for (let i = 0; i < paddedMessage.length; i += 64) {
-      // console.log(`Processing block ${i / 64 + 1}`);
       const block = new Uint32Array(paddedMessage.buffer, i, 16);
-      // console.log("Block data:", Array.from(block).map(w => w.toString(16).padStart(8, '0')).join(' '));
       SHA256.compressBlock(block, hash);
     }
 
@@ -114,12 +104,5 @@ class SHA256 {
   }
 }
 
-// // Test Usage
-// const input = "hello";
-// console.log(SHA256.hash(input));
-
-
-// // our output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
-// // expected output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 [via traditional SHA256 lib]
-
-
+// Export the SHA256 class
+export { SHA256 };
