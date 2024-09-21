@@ -11,7 +11,8 @@
     ".": {
       "import": "./index.js",
       "require": "./index.js"
-    }
+    },
+    "./index.js": "./index.js" 
   },
   "keywords": [
     "SHA256",
