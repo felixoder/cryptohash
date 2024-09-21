@@ -51,7 +51,9 @@ class SHA256 {
       w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
     }
 
-    let [a, b, c, d, e, f, g, h] = hash;
+    let a = hash[0], b = hash[1], c = hash[2], d = hash[3];
+    let e = hash[4], f = hash[5], g = hash[6], h = hash[7];
+
 
     for (let i = 0; i < 64; i++) {
       const S1 = SHA256.rotr(e, 6) ^ SHA256.rotr(e, 11) ^ SHA256.rotr(e, 25);
@@ -106,3 +108,6 @@ class SHA256 {
 
 // Export the SHA256 class
 export { SHA256 };
+
+
+// Implementation of Keccak256
