@@ -114,12 +114,12 @@ class SHA256 {
   }
 }
 
-// Test Usage
-const input = "hello";
-console.log(SHA256.hash(input));
+// // Test Usage
+// const input = "hello";
+// console.log(SHA256.hash(input));
 
 
-// our output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
-// expected output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 [via traditional SHA256 lib]
+// // our output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+// // expected output 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 [via traditional SHA256 lib]
 
 
