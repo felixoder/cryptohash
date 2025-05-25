@@ -1,6 +1,6 @@
 {
   "name": "felixhash",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A custom SHA256, MD5, DJB2 cryptographic hashing class implementation in TypeScript.",
   "main": "index.cjs",
   "types": "index.d.ts",
