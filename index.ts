@@ -212,6 +212,7 @@ class MD5 {
   }
 }
 
+export { MD5 };
 // Example usage:
 // console.log(MD5.hash("hello"));
 // Expected output: 5d41402abc4b2a76b9719d911017c592
