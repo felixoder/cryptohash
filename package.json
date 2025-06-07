@@ -1,8 +1,9 @@
 {
   "name": "felixhash",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A custom SHA256, MD5, DJB2 cryptographic hashing class implementation in TypeScript.",
-  "main": "index.cjs",
+  "type": "module",
+  "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc -b"
@@ -11,11 +12,12 @@
     ".": {
       "import": "./index.js",
       "require": "./index.js"
-    },
-    "./index.js": "./index.js"
+    }
   },
   "keywords": [
     "SHA256",
+    "MD5",
+    "Djb2",
     "crypto",
     "hashing",
     "typescript",

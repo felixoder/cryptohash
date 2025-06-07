@@ -1,20 +1,12 @@
 {
   "compilerOptions": {
-    /* Language and Environment */
-    "target": "es2020",                                 /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations (supports BigInt and setBigUint64). */
-    "lib": ["es2020", "DOM"],                                  /* Include ES2020 library to enable features like BigInt and string.padStart. */
-    
-    /* Modules */
-    "module": "commonjs",                               /* Specify what module code is generated. */
-    
-    /* Interop Constraints */
-    "esModuleInterop": true,                            /* Emit additional JavaScript to ease support for importing CommonJS modules. */
-    "forceConsistentCasingInFileNames": true,           /* Ensure that casing is correct in imports. */
-
-    /* Type Checking */
-    "strict": true,                                     /* Enable all strict type-checking options. */
-    
-    /* Completeness */
-    "skipLibCheck": true                                /* Skip type checking all .d.ts files. */
-  }
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "declaration": true,
+    "strict": true
+  },
+  "include": ["./*.ts"]
 }
